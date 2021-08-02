@@ -1,19 +1,21 @@
-pipeline{
-    
-     agent anystages{   stage('build')
-    
-    
-    {    steps{	   sh 'pwd'	   sh 'ls'	}
-    
-    }
-    
-    stage('test')
-    {    
-        
-        steps
-        
-        {	echo 'hello vvdn'	}
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-        
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
+}
